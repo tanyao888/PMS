@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   data () {
     return {
@@ -63,10 +64,12 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(['setUserInfo']),
     login () {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
-          console.log(this.$refs.loginForm.model)
+          const data = { ...this.$refs.loginForm.model, token: 'sdfjlsjdflj' }
+          this.setUserInfo(data)
           this.$router.push({ name: 'layout' })
         }
       })

@@ -1,6 +1,6 @@
 <template>
   <div class="wrap-container" :style="isCollapse ? 'width:60px': 'width: 220px'">
-    <el-menu default-active="1" :collapse="isCollapse" class="menu" text-color="#6c6c6c" active-text-color="#1abc9c" v-for="item in menuList" :key="item.parentId">
+    <el-menu default-active="1" :collapse="isCollapse" class="menu" text-color="#6c6c6c" active-text-color="#1abc9c" v-for="item in updateMenuList" :key="item.parentId">
       <el-menu-item :index="item.parentId" v-if="!item.children">
         <i :class="item.parentIcon"></i>
         <span slot="title">{{ item.parentTitle }}</span>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
     isCollapse: {
@@ -28,97 +29,10 @@ export default {
   },
   data () {
     return {
-      menuList: [
-        {
-          parentId: '1',
-          parentIcon: 'el-icon-location',
-          parentTitle: '系统首页'
-        },
-        {
-          parentId: '2',
-          parentIcon: 'el-icon-location',
-          parentTitle: '日常管理',
-          children: [
-            {
-              childrenId: '2-1',
-              childrenIcon: 'el-icon-menu',
-              childrenTitle: '保修处理'
-            },
-            {
-              childrenId: '2-2',
-              childrenIcon: 'el-icon-menu',
-              childrenTitle: '住户查询'
-            }
-          ]
-        },
-        {
-          parentId: '1',
-          parentIcon: 'el-icon-location',
-          parentTitle: '系统首页'
-        },
-        {
-          parentId: '2',
-          parentIcon: 'el-icon-location',
-          parentTitle: '日常管理',
-          children: [
-            {
-              childrenId: '2-1',
-              childrenIcon: 'el-icon-menu',
-              childrenTitle: '保修处理'
-            },
-            {
-              childrenId: '2-2',
-              childrenIcon: 'el-icon-menu',
-              childrenTitle: '住户查询'
-            }
-          ]
-        },
-        {
-          parentId: '1',
-          parentIcon: 'el-icon-location',
-          parentTitle: '系统首页'
-        },
-        {
-          parentId: '2',
-          parentIcon: 'el-icon-location',
-          parentTitle: '日常管理',
-          children: [
-            {
-              childrenId: '2-1',
-              childrenIcon: 'el-icon-menu',
-              childrenTitle: '保修处理'
-            },
-            {
-              childrenId: '2-2',
-              childrenIcon: 'el-icon-menu',
-              childrenTitle: '住户查询'
-            }
-          ]
-        },
-        {
-          parentId: '1',
-          parentIcon: 'el-icon-location',
-          parentTitle: '系统首页'
-        },
-        {
-          parentId: '2',
-          parentIcon: 'el-icon-location',
-          parentTitle: '日常管理',
-          children: [
-            {
-              childrenId: '2-1',
-              childrenIcon: 'el-icon-menu',
-              childrenTitle: '保修处理'
-            },
-            {
-              childrenId: '2-2',
-              childrenIcon: 'el-icon-menu',
-              childrenTitle: '住户查询'
-            }
-          ]
-        }
-      ]
     }
+  },
+  computed: {
+    ...mapGetters(['updateMenuList'])
   }
 }
 </script>

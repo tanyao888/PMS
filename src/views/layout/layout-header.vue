@@ -11,7 +11,7 @@
       <div class="right-content">
         <i class="el-icon-chat-dot-round"></i><span>消息</span>
         <el-dropdown trigger="click" @command="handleCommand">
-          <span class="userInf"><img src="../../assets/userInf/userVia.jpeg" alt=""><span>用户名</span></span>
+          <span class="userInf"><img src="../../assets/userInf/userVia.jpeg" alt=""><span>{{ updateUserInfo.userName }}</span></span>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item v-for="item in userOptions" :key="item.optionKey" :command="item.optionKey">{{ item.optionLabel }}</el-dropdown-item>
           </el-dropdown-menu>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
@@ -41,6 +42,9 @@ export default {
       ]
     }
   },
+  computed: {
+    ...mapGetters(['updateUserInfo'])
+  },
   methods: {
     handleCommand (val) {
       switch (val) {
@@ -51,7 +55,9 @@ export default {
           console.log('修改密码')
           break
         case '3':
+          sessionStorage.clear()
           this.$router.push({ name: 'login' })
+          window.location.reload()
           break
         default:
           break

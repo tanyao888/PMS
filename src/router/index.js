@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import currentManagement from './asyncRouter/currentManagement'
-import basicInformation from './asyncRouter/basicInformation'
+import dailyManagement from './asyncRouter/dailyManagement/index'
 
 Vue.use(VueRouter)
 
@@ -16,6 +15,11 @@ const routes = [
     component: () => import('../views/login/loginPage.vue')
   },
   {
+    path: '/404',
+    name: '404',
+    component: () => import('../views/errorPage.vue')
+  },
+  {
     path: '/layout',
     name: 'layout',
     redirect: '/home',
@@ -26,8 +30,7 @@ const routes = [
         name: 'home',
         component: () => import('@/views/home/homePage.vue')
       },
-      ...currentManagement,
-      ...basicInformation
+      ...dailyManagement
     ]
   }
 ]

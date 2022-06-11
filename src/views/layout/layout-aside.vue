@@ -1,6 +1,6 @@
 <template>
-  <div class="wrap-container" :style="isCollapse ? 'width:60px': 'width: 220px'">
-    <el-menu default-active="1" :collapse="isCollapse" class="menu" text-color="#6c6c6c" active-text-color="#1abc9c" v-for="item in updateMenuList" :key="item.parentId">
+  <div class="wrap-container">
+    <el-menu default-active="1" :collapse="isCollapse" class="menu" text-color="#6c6c6c" router :style="isCollapse ? 'width:60px': 'width: 180px'" active-text-color="#1abc9c" v-for="item in updateMenuList" :key="item.parentId">
       <el-menu-item :index="item.parentId" v-if="!item.children">
         <i :class="item.parentIcon"></i>
         <span slot="title">{{ item.parentTitle }}</span>
@@ -46,5 +46,23 @@ export default {
   ::v-deep.el-menu {
     border-right: none;
   }
+  ::v-deep.el-icon-menu {
+    margin-right: 15px;
+  }
+}
+.wrap-container::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
+}
+.wrap-container::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 4px;
+  background: #ccc;
+}
+.wrap-container::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  border-radius: 4px;
+  background: #eee;
+  cursor: pointer;
 }
 </style>

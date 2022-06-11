@@ -3,92 +3,87 @@ const menuList = {
   state: {
     menuList: [
       {
-        parentId: '1',
-        parentIcon: 'el-icon-location',
+        parentId: '/home',
+        parentIcon: 'el-icon-menu',
         parentTitle: '系统首页'
       },
       {
-        parentId: '2',
-        parentIcon: 'el-icon-location',
+        parentId: '/dailyManagement',
+        parentIcon: 'el-icon-menu',
         parentTitle: '日常管理',
         children: [
           {
-            childrenId: '2-1',
-            childrenIcon: 'el-icon-menu',
-            childrenTitle: '保修处理'
+            childrenId: '/repairProcess',
+            childrenTitle: '报修处理'
           },
           {
-            childrenId: '2-2',
-            childrenIcon: 'el-icon-menu',
+            childrenId: '/repairProcess',
             childrenTitle: '住户查询'
+          },
+          {
+            childrenId: '/repairProcess',
+            childrenTitle: '业主变更'
+          },
+          {
+            childrenId: '/repairProcess',
+            childrenTitle: '费用支出'
+          },
+          {
+            childrenId: '/repairProcess',
+            childrenTitle: '日常收费'
           }
         ]
       },
       {
-        parentId: '1',
-        parentIcon: 'el-icon-location',
-        parentTitle: '系统首页'
+        parentId: '3',
+        parentIcon: 'el-icon-menu',
+        parentTitle: '基础资料'
       },
       {
-        parentId: '2',
-        parentIcon: 'el-icon-location',
-        parentTitle: '日常管理',
+        parentId: '4',
+        parentIcon: 'el-icon-menu',
+        parentTitle: '车位管理',
         children: [
-          {
-            childrenId: '2-1',
-            childrenIcon: 'el-icon-menu',
-            childrenTitle: '保修处理'
-          },
-          {
-            childrenId: '2-2',
-            childrenIcon: 'el-icon-menu',
-            childrenTitle: '住户查询'
-          }
         ]
       },
       {
-        parentId: '1',
-        parentIcon: 'el-icon-location',
-        parentTitle: '系统首页'
+        parentId: '5',
+        parentIcon: 'el-icon-menu',
+        parentTitle: '抄表管理'
       },
       {
-        parentId: '2',
-        parentIcon: 'el-icon-location',
-        parentTitle: '日常管理',
+        parentId: '6',
+        parentIcon: 'el-icon-menu',
+        parentTitle: '收费管理',
         children: [
-          {
-            childrenId: '2-1',
-            childrenIcon: 'el-icon-menu',
-            childrenTitle: '保修处理'
-          },
-          {
-            childrenId: '2-2',
-            childrenIcon: 'el-icon-menu',
-            childrenTitle: '住户查询'
-          }
         ]
       },
       {
-        parentId: '1',
-        parentIcon: 'el-icon-location',
-        parentTitle: '系统首页'
+        parentId: '7',
+        parentIcon: 'el-icon-menu',
+        parentTitle: '微信业务'
       },
       {
-        parentId: '2',
-        parentIcon: 'el-icon-location',
-        parentTitle: '日常管理',
+        parentId: '8',
+        parentIcon: 'el-icon-menu',
+        parentTitle: '统计查询',
         children: [
-          {
-            childrenId: '2-1',
-            childrenIcon: 'el-icon-menu',
-            childrenTitle: '保修处理'
-          },
-          {
-            childrenId: '2-2',
-            childrenIcon: 'el-icon-menu',
-            childrenTitle: '住户查询'
-          }
         ]
+      },
+      {
+        parentId: '9',
+        parentIcon: 'el-icon-menu',
+        parentTitle: '租赁管理'
+      },
+      {
+        parentId: '10',
+        parentIcon: 'el-icon-menu',
+        parentTitle: '短信管理'
+      },
+      {
+        parentId: '11',
+        parentIcon: 'el-icon-menu',
+        parentTitle: '系统设置'
       }
     ]
   },

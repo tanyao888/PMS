@@ -37,7 +37,7 @@
         <el-table-column type="selection" width="55" align="center"></el-table-column>
         <el-table-column prop="userName" label="业主姓名" align="center"></el-table-column>
         <el-table-column prop="phone" label="联系电话" align="center"></el-table-column>
-        <el-table-column prop="adress" label="报修地址" align="center"></el-table-column>
+        <el-table-column prop="address" label="报修地址" align="center"></el-table-column>
         <el-table-column prop="state" label="状态" align="center"></el-table-column>
         <el-table-column prop="description" label="描述" align="center"></el-table-column>
         <el-table-column prop="image" label="报修图片" align="center"></el-table-column>
@@ -57,13 +57,19 @@
         </el-table-column>
       </el-table>
     </div>
+    <repair-dialog :showRepair.sync="showRepair" :formRepair="formRepair" />
   </div>
 </template>
 
 <script>
+import repairDialog from '../dialog/repair-dialog.vue'
 export default {
+  components: {
+    repairDialog
+  },
   data () {
     return {
+      formRepair: {},
       searchForm: {
         content: '',
         state: ''
@@ -82,7 +88,7 @@ export default {
         {
           userName: '张三',
           phone: '13589366657',
-          adress: '江山帝景B区3栋13楼305室',
+          address: '江山帝景B区3栋13楼305室',
           state: '待维修',
           description: '早上我们电梯就停了，中午修不好，我就告你们物业',
           image: [],
@@ -90,23 +96,26 @@ export default {
           repairTime: '2020-0430'
         },
         {
-          userName: '张三',
+          userName: '李四',
           phone: '13589366657',
-          adress: '江山帝景B区3栋13楼305室',
+          address: '江山帝景B区3栋13楼305室',
           state: '待维修',
           description: '早上我们电梯就停了，中午修不好，我就告你们物业',
           image: [],
           handler: '2020-04-27',
           repairTime: '2020-0430'
         }
-      ]
+      ],
+      showRepair: false
     }
   },
   methods: {
-    editBtn () {
+    editBtn (row) {
+      this.showRepair = true
+      this.formRepair = row
     },
     deleteBtn () {
-      alert('删除')
+
     }
   }
 }

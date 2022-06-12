@@ -14,7 +14,9 @@
               <el-form-item label="业主姓名">{{ formRepair.userName }}</el-form-item>
               <el-form-item label="预约时间">{{ formRepair.handler }}</el-form-item>
               <el-form-item label="报修地址">{{ formRepair.address}}</el-form-item>
-              <el-form-item label="业主问题">{{ formRepair.description}}</el-form-item>
+              <el-form-item label="业主问题">
+                <div class="description">{{ formRepair.description}}</div>
+              </el-form-item>
               <el-form-item prop="repairAssigned" label="维修指派">
                 <el-select v-model="form.repairAssigned" size="mini" clearable>
                   <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
@@ -83,27 +85,15 @@ export default {
   justify-content: center;
   margin-top: 20px;
   .form-content {
-    width: 300px;
+    width: 400px;
+    .description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #1abc9c;
+    }
   }
 }
 .container-wrap {
-  ::v-deep {
-    .el-dialog__header {
-      background-color: #1abc9c;
-    }
-    .el-dialog__title {
-      color: #fff;
-    }
-    .el-dialog__close {
-      color: #fff;
-    }
-    .el-button {
-      background-color: #1abc9c;
-      color: #fff;
-    }
-    .el-dialog__footer {
-      text-align: center;
-    }
-  }
 }
 </style>

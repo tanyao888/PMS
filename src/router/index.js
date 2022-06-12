@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import dailyManagement from './asyncRouter/dailyManagement/index'
+import basicInformation from './asyncRouter/basicInformation/index'
 
 Vue.use(VueRouter)
 
@@ -30,7 +31,8 @@ const routes = [
         name: 'home',
         component: () => import('@/views/home/homePage.vue')
       },
-      ...dailyManagement
+      ...dailyManagement,
+      ...basicInformation
     ]
   }
 ]

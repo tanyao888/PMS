@@ -1,6 +1,6 @@
 <template>
   <div class="wrap-container">
-    <el-menu default-active="1" :collapse="isCollapse" class="menu" text-color="#6c6c6c" router :style="isCollapse ? 'width:60px': 'width: 180px'" active-text-color="#1abc9c" v-for="item in updateMenuList" :key="item.parentId">
+    <el-menu default-active="1" :collapse="isCollapse" class="menu" text-color="#6c6c6c" router :style="isCollapse ? 'width:60px': 'width: 200px'" active-text-color="#1abc9c" v-for="item in updateMenuList" :key="item.parentId">
       <el-menu-item :index="item.parentId" v-if="!item.children">
         <i :class="item.parentIcon"></i>
         <span slot="title">{{ item.parentTitle }}</span>

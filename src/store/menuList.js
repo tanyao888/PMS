@@ -15,27 +15,11 @@ const menuList = {
           {
             childrenId: '/repairProcess',
             childrenTitle: '报修处理'
-          },
-          {
-            childrenId: '/repairProcess',
-            childrenTitle: '住户查询'
-          },
-          {
-            childrenId: '/repairProcess',
-            childrenTitle: '业主变更'
-          },
-          {
-            childrenId: '/repairProcess',
-            childrenTitle: '费用支出'
-          },
-          {
-            childrenId: '/repairProcess',
-            childrenTitle: '日常收费'
           }
         ]
       },
       {
-        parentId: '3',
+        parentId: '/basicInformation',
         parentIcon: 'el-icon-menu',
         parentTitle: '基础资料'
       },

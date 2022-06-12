@@ -5,7 +5,7 @@
     </div>
     <div class="layout-main">
       <layout-aside :isCollapse="isCollapse" />
-      <layout-main />
+      <layout-main :isCollapse="isCollapse" />
     </div>
   </div>
 </template>

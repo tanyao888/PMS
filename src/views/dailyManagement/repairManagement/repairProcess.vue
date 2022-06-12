@@ -28,8 +28,8 @@
       </el-row>
     </div>
     <div class="action">
-      <el-button size="mini" style="background-color: #1abc9c;color: white">电话报修</el-button>
-      <el-button size="mini" style="background-color: #1abc9c;color: white">维修员</el-button>
+      <el-button size="mini" style="background-color: #1abc9c;color: white" @click="editBtn">电话报修</el-button>
+      <el-button size="mini" style="background-color: #1abc9c;color: white" @click="addFfman">维修员</el-button>
       <el-button size="mini">删除</el-button>
     </div>
     <div class="table-wrap">
@@ -110,12 +110,26 @@ export default {
     }
   },
   methods: {
+    addFfman () {
+      this.$router.push({
+        name: 'addFfman'
+      })
+    },
     editBtn (row) {
       this.showRepair = true
       this.formRepair = row
     },
     deleteBtn () {
-
+      this.$confirm('确认删除此处理单？', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: '删除成功!'
+        })
+      }).catch()
     }
   }
 }
